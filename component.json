@@ -1,0 +1,9 @@
+{
+  "name": "angular-ordinal-filter",
+  "version": "0.0.1",
+  "main": "ordinal.js",
+  "author": "John Dennis Pedrie",
+  "dependencies": {
+    "angular": "~1.0.6",
+  }
+}
