@@ -4,6 +4,6 @@
   "main": "ordinal.js",
   "author": "John Dennis Pedrie",
   "dependencies": {
-    "angular": "~1.0.6",
+    "angular": "~1.0.6"
   }
 }
