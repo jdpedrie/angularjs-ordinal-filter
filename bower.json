@@ -2,7 +2,8 @@
   "name": "angularjs-ordinal-filter",
   "version": "0.0.1",
   "main": "ordinal.js",
-  "author": "John Dennis Pedrie",
+  "license": "MIT",
+  "authors": ["John Dennis Pedrie <john@pedrie.com> (http://johnpedrie.com)"],
   "dependencies": {
     "angular": "~1.0.6"
   }
