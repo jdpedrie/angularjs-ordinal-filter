@@ -1,10 +1,11 @@
 {
   "name": "angularjs-ordinal-filter",
-  "version": "1.0",
-  "main": "ordinal.js",
+  "main": "ordinal-browser.js",
   "license": "MIT",
-  "authors": ["John Dennis Pedrie <john@pedrie.com> (http://johnpedrie.com)"],
+  "authors": [
+    "John Dennis Pedrie <john@pedrie.com> (http://johnpedrie.com)"
+  ],
   "dependencies": {
-    "angular": ">=1.0.6"
+    "angular": "*"
   }
 }
