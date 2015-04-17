@@ -1,0 +1,37 @@
+{
+  "name": "angularjs-ordinal-filter",
+  "version": "1.0.0",
+  "description": "AngularJS Ordinal Number Filter",
+  "keywords": [
+    "browser",
+    "angular",
+    "ordinal",
+    "filter"
+  ],
+  "repository": "jdpedrie/angularjs-ordinal-filter",
+  "author": "John Dennis Pedrie <john@pedrie.com> (http://johnpedrie.com)",
+  "license": "MIT",
+  "main": "ordinal-browser.js",
+  "files": [
+    "index.js",
+    "LICENSE.md"
+  ],
+  "devDependencies": {
+    "angular": "^1.3.15",
+    "angular-mocks": "^1.3.15",
+    "browserify": "^9.0.3",
+    "chai": "^2.1.2",
+    "karma": "^0.12.31",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^0.1.7",
+    "karma-mocha": "^0.1.10",
+    "mocha": "^2.2.1"
+  },
+  "dependencies": {
+    "ordinal": "0.0.2"
+  },
+  "scripts": {
+    "browser": "browserify -o ordinal-browser.js index.js",
+    "test": "./node_modules/karma/bin/karma start"
+  }
+}
