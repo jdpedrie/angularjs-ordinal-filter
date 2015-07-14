@@ -1,6 +1,6 @@
 'use strict';
 
-var ordinal = require('ordinal');
+var ordinal = require('ordinal-number-suffix');
 
 angular
   .module('ordinal', [])
@@ -10,6 +10,6 @@ angular
   .filter('ordinal', function() {
     return function(input) {
       var num = parseInt(input, 10);
-      return isNaN(num) ? input : ordinal.english(num);
+      return isNaN(num) ? input : ordinal(num);
     };
   });

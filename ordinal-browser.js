@@ -1,7 +1,7 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 'use strict';
 
-var ordinal = require('ordinal');
+var ordinal = require('ordinal-number-suffix');
 
 angular
   .module('ordinal', [])
@@ -11,63 +11,40 @@ angular
   .filter('ordinal', function() {
     return function(input) {
       var num = parseInt(input, 10);
-      return isNaN(num) ? input : ordinal.english(num);
+      return isNaN(num) ? input : ordinal(num);
     };
   });
 
-},{"ordinal":2}],2:[function(require,module,exports){
-exports.english = require('./lib/english');
+},{"ordinal-number-suffix":2}],2:[function(require,module,exports){
 
-},{"./lib/english":3}],3:[function(require,module,exports){
-function teens() {
-  return [11, 12, 13, 14, 15, 16, 17, 18, 19];
+/**
+ * Get the ordinal number with suffix from `n`
+ *
+ * @api public
+ * @param {Number} n
+ * @return {String}
+ */
+exports = module.exports = function (n) {
+  return n + exports.suffix(+n);
 };
 
-function blank(n) {
-  return 'string' === typeof n && 0 === n.trim().length;
-}
-
-function numeric(n) {
-  return 'number' === typeof +n && !Number.isNaN(+n);
-}
-
-function valid(n) {
-  return numeric(n) && !blank(n) && 'object' !== typeof n;
-}
-
-function validate(n) {
-  if(!valid(n)) {
-    throw new Error('Must be a number or numeric string');
-  }
-}
-
-function indicator(n) {
-  validate(n);
-
-  var remainder = n % 10;
-  if(~teens().indexOf(n)) {
-    return 'th';
-  }
-  switch(n % 10) {
-    case 1:
-      return 'st';
-      break;
-    case 2:
-      return 'nd';
-      break;
-    case 3:
-      return 'rd';
-      break;
-    default:
-      return 'th';
-  }
+/**
+ * Get the suffix for the given `n`
+ *
+ * @api private
+ * @param {Number} n
+ * @return {String}
+ */
+exports.suffix = function (n) {
+  return Math.floor(n / 10) === 1
+      ? 'th'
+      : (n % 10 === 1
+        ? 'st'
+        : (n % 10 === 2
+          ? 'nd'
+          : (n % 10 === 3
+            ? 'rd'
+            : 'th')));
 };
-
-function english(n) {
-  return n + indicator(n);
-};
-
-module.exports = english;
-module.exports.indicator = indicator;
 
 },{}]},{},[1]);
