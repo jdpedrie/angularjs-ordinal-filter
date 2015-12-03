@@ -5,9 +5,6 @@
 
 Converts e.g 1 -> 1st, 2 -> 2nd, 3 -> 3rd, 4 -> 4th.
 
-## Hat tip
-The snippet to create an ordinal number was found online [here](http://ecommerce.shopify.com/c/ecommerce-design/t/ordinal-number-in-javascript-1st-2nd-3rd-4th-29259)
-
 ## Installation
 
 Via [npm](https://www.npmjs.com/package/angular-ordinal) (Recommended)
@@ -31,6 +28,8 @@ Include the module as a dependency in your app:
 angular.module('MyApp', ['ordinal']);
 ```
 
+
+
 ## Usage
 
 In your template:
@@ -47,4 +46,6 @@ angular.module('MyApp').controller('$scope', '$filter', function($scope, $filter
 });
 ```
 
-Hopefully someone finds this useful!
+## License
+
+Licensed under the MIT License.
